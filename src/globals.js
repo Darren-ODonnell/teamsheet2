@@ -54,16 +54,4 @@ export const TEAM_LIST_HEADER_IMAGE = 'C:\\Users\\liam.odonnell\\Desktop\\teamsh
 //     { "name" : "Erins Isle","irishName" : "CLG OileÃ¡n na hÃ‰ireann","contactName" : "Louise O'Hara","contactEmail" : "","contactPhone" : "086 8730702","pitches" : "Erins Isle GAA Club","colours" : "Green & Black","abbrev" : "ERIN" },
 //     { "name" : "Crumlin","irishName" : "Croimghlinn","contactName" : "Ailish Murray","contactEmail" : "","contactPhone" : "086 3697089","pitches" : "Crumlin GAA (Pearse Park)","colours" : "Blue & White","abbrev" : "CRUM" },
 // }
-//
-// export const header = {
-//
-// }
-// export const team = {
-//
-// }
-// export const subs = {
-//
-// }
-// export const footer = {
-//
-// }
+

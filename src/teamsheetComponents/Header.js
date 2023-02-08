@@ -1,5 +1,4 @@
 import React from 'react';
-import { TEAM_LIST_HEADER_IMAGE } from "../globals";
 import CamogieHeader from '../media/CamogieImage.jpg'
 
 let stylename = "header-image"

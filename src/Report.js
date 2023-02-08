@@ -1,11 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import {Table} from '@mui/material';
-import {TableBody} from '@mui/material';
-import {TableCell} from '@mui/material';
-import {TableContainer} from '@mui/material';
 import {TableHead} from '@mui/material';
 import {TableRow} from '@mui/material';
-import {Paper} from '@mui/material';
+
 import {
     TEAM_LIST_HEADER_COMPETITION_ENGLISH, TEAM_LIST_HEADER_COMPETITION_IRISH,
     TEAM_LIST_HEADER_TEAMS_ENGLISH, TEAM_LIST_HEADER_TEAMS_IRISH,
@@ -98,9 +95,9 @@ const Report = ( {data} ) => {
             {/* Competition table */}
             <Table style={TableCellStyle}>
                 <TableRow >
-                    <td style={FirstRowDouble}>{ TEAM_LIST_HEADER_COMPETITION_IRISH }</td>
+                    <td style={FirstRowDouble} style={{fontWeight:'bold'}}>{ TEAM_LIST_HEADER_COMPETITION_IRISH }</td>
                     <td style={FirstRowDouble}>{ data.header.competitionNameIrish }</td>
-                    <td style={FirstRowDouble}>{ TEAM_LIST_HEADER_TEAMS_IRISH }</td>
+                    <td style={FirstRowDouble} style={{fontWeight:'bold'}}>{ TEAM_LIST_HEADER_TEAMS_IRISH }</td>
                     <td style={FirstRowDouble}>{ data.header.homeTeamNameIrish }</td>
                     <td style={FirstRowDouble}>{ TEAM_LIST_HEADER_TEAMS_SEPARATOR }</td>
                     <td style={FirstRowDouble}>{ data.header.awayTeamNameIrish }</td>
