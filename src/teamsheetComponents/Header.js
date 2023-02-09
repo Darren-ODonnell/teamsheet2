@@ -1,5 +1,5 @@
 import React from 'react';
-import CamogieHeader from '../media/CamogieImage.jpg'
+import CamogieHeader from '../media/CamogieImage.png'
 import './Report.css'
 
 function Header() {

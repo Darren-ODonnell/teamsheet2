@@ -3,12 +3,6 @@ import React from "react";
 import Report from "./teamsheetComponents/Report";
 import PageWrapper from "./teamsheetComponents/PageWrapper";
 
-// const data = [
-//     { name: "John Doe", age: 32, role: "Developer" },
-//     { name: "Jane Doe", age: 28, role: "Designer" }
-// ];
-
-
 const header = {
     competitionName     : 'League Cup',
     competitionNameIrish: 'League Cup Irish',
