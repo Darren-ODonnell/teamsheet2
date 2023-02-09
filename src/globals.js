@@ -33,7 +33,9 @@ export const TEAM_LIST_DATE_IRISH       = 'Dáta'
 export const TEAM_LIST_INSTRUCTIONS_IRISH = 'Tabharfar dhá chóip den bhfoirm seo don réiteoir, a thabharfaidh cóip amháin de, do chaptaen na foirne eile.'
 export const TEAM_LIST_INSTRUCTIONS_ENGLISH = '(Two copies of the completed form shall be given to the referee, who shall give one copy to the captain of the opposing team).'
 
-export const TEAM_LIST_HEADER_IMAGE = 'C:\\Users\\liam.odonnell\\Desktop\\teamsheet\\src\\media\\CamogieImage.jpg'
+export const TEAM_LIST_FOOTER = "Camogie Association, Croke Park, St Joseph's Avenue, Dublin 3. Tel: 01 865 8651. www.camogie.ie"
+
+export const TEAM_LIST_HEADER_IMAGE = 'C:\\Users\\liam.odonnell\\Desktop\\teamsheet\\src\\media\\CamogieImage.png'
 
 
 // export const CLUBS = {
@@ -54,4 +56,16 @@ export const TEAM_LIST_HEADER_IMAGE = 'C:\\Users\\liam.odonnell\\Desktop\\teamsh
 //     { "name" : "Erins Isle","irishName" : "CLG OileÃ¡n na hÃ‰ireann","contactName" : "Louise O'Hara","contactEmail" : "","contactPhone" : "086 8730702","pitches" : "Erins Isle GAA Club","colours" : "Green & Black","abbrev" : "ERIN" },
 //     { "name" : "Crumlin","irishName" : "Croimghlinn","contactName" : "Ailish Murray","contactEmail" : "","contactPhone" : "086 3697089","pitches" : "Crumlin GAA (Pearse Park)","colours" : "Blue & White","abbrev" : "CRUM" },
 // }
-
+//
+// export const header = {
+//
+// }
+// export const team = {
+//
+// }
+// export const subs = {
+//
+// }
+// export const footer = {
+//
+// }

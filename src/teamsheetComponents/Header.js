@@ -1,26 +1,11 @@
 import React from 'react';
 import CamogieHeader from '../media/CamogieImage.jpg'
-
-let stylename = "header-image"
-
-const headerImage = {
-    backgroundPosition: 'top',
-    backgroundRepeat  : 'no-repeat',
-    float : 'top',
-    position          : 'relative',
-    backgroundSize    : 'cover',
-    height            : '70px',
-    width             : '100%'
-}
-
+import './Report.css'
 
 function Header() {
     return (
-
-        <header >
-            <img style={headerImage} src={CamogieHeader} alt="Header Image" />
-        </header>
+        <header className="header">
+            <img  className="headerImage" src={CamogieHeader} alt="Header Image" />        </header>
     );
 }
-
 export default Header;

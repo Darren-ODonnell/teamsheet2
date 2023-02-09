@@ -1,5 +1,7 @@
 import React from "react";
-import Report from "./Report";
+
+import Report from "./teamsheetComponents/Report";
+import PageWrapper from "./teamsheetComponents/PageWrapper";
 
 // const data = [
 //     { name: "John Doe", age: 32, role: "Developer" },
@@ -48,10 +50,10 @@ const subs = [
     {number:25,name:"asdfafdsadf",nameIrish:"asdfasdfsadf"},
 ]
 const footer = [
-    {role:'Manager',name:"asdfafdsadf",nameIrish:"asdfasdfsadf"},
-    {role:'Coach',name:"asdfafdsadf",nameIrish:"asdfasdfsadf"},
-    {role:'Physio',name:"asdfafdsadf",nameIrish:"asdfasdfsadf"},
-    {role:'Administration',name:"asdfafdsadf",nameIrish:"asdfasdfsadf"},
+    {role: 'Manager'          , name: "Doni Fox"        , nameIrish: "Dónal Mac Saoir"      },
+    {role: 'Assistant Manager', name: "Marion O'Donnell", nameIrish: "Máirín Ní Dhomhnaill" },
+    {role: 'Assistant Manager', name: "Pio McCarthy"    , nameIrish: "Pío Mac Carthaigh"    },
+    {role: 'Assistant Manager', name: "Ger McManus"     , nameIrish: "Gearóid Mac Mánus"    },
 ]
 
 const data = {
@@ -65,7 +67,9 @@ const data = {
 function App() {
     console.log("App")
     return(
-        <Report data={data}/>
+        <PageWrapper>
+            <Report data={data}/>
+        </PageWrapper>
     )
 }
 

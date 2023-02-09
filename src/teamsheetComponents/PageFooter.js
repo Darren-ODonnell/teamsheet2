@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PageFooter(footer) {
+function PageFooter({message}) {
     return (
-        <div style={{ textAlign: 'center', fontSize: '10pt', display: 'none' }} className="page-footer">
-            { footer}
+        <div className="printFooter">
+            { message}
         </div>
     );
 }
