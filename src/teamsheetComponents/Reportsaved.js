@@ -42,6 +42,7 @@ const Report = ( {data} ) => {
         <div >
 
             <Header/>
+            <p className="TitleStyleUnderline">{TEAM_LIST_VERSION}</p>
             <p className="TitleStyleUnderline">{TEAM_LIST_TITLE}</p>
 
     {/* Competition table */}
@@ -85,7 +86,7 @@ const Report = ( {data} ) => {
                     </TableRow>
                 </TableHead>
                 {data.team.map(row => (
-                    <TableRow className="TableRowHeight">
+                    <TableRow>
                         <td className="TableCellStyle" >{row.number}</td>
                         <td className="TableCellStyle">{row.name}</td>
                         <td className="TableCellStyle">{row.nameIrish}</td>
@@ -97,21 +98,22 @@ const Report = ( {data} ) => {
             <Table >
                 {data.subs.map(row => (
 
-                    <TableRow className="TableRowHeight">
+                    <TableRow>
                         <td className="TableCellStyle colNumbers">{row.number}</td>
                         <td className="TableCellStyle">{row.name}</td>
                         <td className="TableCellStyle">{row.nameIrish}</td>
                     </TableRow>
                 ))}
             </Table>
-     {/*Signatures */}
 
-            <div className="text-block">
-                <p >{TEAM_LIST_OFFICIAL_IRISH}_________________________________________ {TEAM_LIST_DATE_IRISH}__________________<br/>
-                    {TEAM_LIST_OFFICIAL_ENGLISH}</p>
-                <p >{TEAM_LIST_REFEREE_IRISH}__________________________________________<br/>
-                    {TEAM_LIST_REFEREE_ENGLISH}</p>
-            </div>
+     {/*Signatures */}
+            <br/>
+            <br/>
+            <p>{TEAM_LIST_OFFICIAL_IRISH}_________________________________________        {TEAM_LIST_DATE_IRISH}__________________</p>
+            <p>{TEAM_LIST_OFFICIAL_ENGLISH}</p>
+            <br/>
+            <p>{TEAM_LIST_REFEREE_IRISH}__________________________________________</p>
+            <p>{TEAM_LIST_REFEREE_ENGLISH}</p>
 
         </div>
     );

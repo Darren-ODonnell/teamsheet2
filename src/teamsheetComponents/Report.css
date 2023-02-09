@@ -6,12 +6,20 @@
     /*border         : 2px solid black;*/
     border : 1px solid black;
     border-collapse: collapse;
-    height         : 5px;
+    height         : 18px;
     text-align     : center;
+    margin :0;
 }
 .TableCellStyle .ManagerCellStyle  {
     text-align : left;
 }
+
+.TableRowHeight {
+    font-size: .7em;
+    height : 12px
+
+}
+
 
 .TableCellStyle .ManagerCellStyleCol  {
     text-align : left;
@@ -19,7 +27,7 @@
 }
 
 .TableCellStyle .FirstRowDouble {
-    height: 50px;
+    height: 40px;
 }
 
 .TableCellStyle  .TitleTableCellStyle {
@@ -125,4 +133,10 @@
         padding: 10px;
         text-align: center;
     }
+}
+.text-block {
+    width: 80%;
+    font-size: 12px;
+    line-height: 1;
+
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 
 const PageStyle = {
-    marginTop : '35mm',
-    // margin     : '5px',
+    marginTop : '15mm',
     marginBottom : '5mm',
     marginLeft : '1cm',
 
