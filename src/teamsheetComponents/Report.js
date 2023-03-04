@@ -38,6 +38,9 @@ const Report = ( {data} ) => {
 
     }, [tableRef]);
 
+
+
+
     return (
         <div >
 
