@@ -97,7 +97,6 @@ const Report = ( {data} ) => {
             <p className="TitleStyle">{TEAM_LIST_SUBS_TITLE}</p>
             <Table >
                 {data.subs.map(row => (
-
                     <TableRow>
                         <td className="TableCellStyle colNumbers">{row.number}</td>
                         <td className="TableCellStyle">{row.name}</td>

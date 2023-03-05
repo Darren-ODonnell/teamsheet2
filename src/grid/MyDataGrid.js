@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import  AgGridColumn  from 'ag-grid-community';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 import Report from "../teamsheetComponents/Report";
 import {Button} from "@mui/material";
+
+import './myDataGrid.css'
+import {printPopup, showPopup} from "../teamsheetComponents/helper";
 
 const header = {
     competitionName     : 'League Cup',
@@ -18,7 +20,6 @@ const header = {
     club                : 'Judes',
     county              : 'Dublin',
 }
-
 const team = [
     {number:1,name:"sdfsadfasdf",nameIrish:"asfasdfsdf"},
     {number:2,name:"asdfsdfsdf",nameIrish:"asdfasdfsdf"},
@@ -55,7 +56,6 @@ const footer = [
     {role: 'Assistant Manager', name: "Pio McCarthy"    , nameIrish: "Pío Mac Carthaigh"    },
     {role: 'Assistant Manager', name: "Ger McManus"     , nameIrish: "Gearóid Mac Mánus"    },
 ]
-
 const data = {
     header: header,
     team  : team,
@@ -65,10 +65,15 @@ const data = {
 
 const MyDataGrid = () => {
     const [showTeamsheet, setShowTeamsheet] = useState(false);
-
+    const [showPrintPreview, setShowPrintPreview] = useState(false);
     const handleClick = (prevState) => {
         setShowTeamsheet(!showTeamsheet)
     }
+
+    const handleOpenPrintPreview = () => {
+        showPopup()
+        setShowPrintPreview(true);
+    };
 
     const rowData = [
         {id: 1, make: "Toyota", model: "Celica", price: 35000},
@@ -85,14 +90,23 @@ const MyDataGrid = () => {
     console.log("Show: " + showTeamsheet)
 
     return (
-        <div className="ag-theme-alpine" style={{height: '200px', width: '600px'}}>
+        <div className="ag-theme-alpine" style={{ height: '200px', width: '800px' }}>
             <AgGridReact
                 rowData={rowData}
                 columnDefs={columnDefs}
             />
-            <Button onClick={handleClick}>Show Teamsheet</Button>
+            <Button onClick={handleOpenPrintPreview}>Show Popup</Button>
 
-            {showTeamsheet ? <Report data={data}/> : null }
+            {showPrintPreview && (
+                <div className="popup-modal">
+                    <div className="popup-modal-content print-container" >
+                        <Report data={data}/>
+                        <Button onClick={printPopup}>Print Data</Button>
+                        <Button onClick={() => setShowPrintPreview(false)}>Close Popup Modal</Button>
+                    </div>
+                </div>
+            )}
+
 
         </div>
     );

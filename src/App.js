@@ -1,6 +1,5 @@
 import React from "react";
 
-import Report from "./teamsheetComponents/Report";
 import PageWrapper from "./teamsheetComponents/PageWrapper";
 import MyDataGrid from "./grid/MyDataGrid";
 

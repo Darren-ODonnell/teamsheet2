@@ -15,7 +15,7 @@
 }
 
 .TableRowHeight {
-    font-size: .7em;
+    font-size: 1.2em;
     height : 12px
 
 }
@@ -136,7 +136,7 @@
 }
 .text-block {
     width: 80%;
-    font-size: 12px;
+    font-size: 1.4em;
     line-height: 1;
 
 }

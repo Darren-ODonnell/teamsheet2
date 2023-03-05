@@ -1,13 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import {Table} from '@mui/material';
-import {TableBody} from '@mui/material';
-import {TableCell} from '@mui/material';
-import {TableContainer} from '@mui/material';
-import {TableHead} from '@mui/material';
-import {TableRow} from '@mui/material';
-import {Paper} from '@mui/material';
+import {Table, TableBody, TableHead, TableRow} from '@mui/material';
 import './Report.css'
-
 import {
     TEAM_LIST_HEADER_COMPETITION_ENGLISH, TEAM_LIST_HEADER_COMPETITION_IRISH,
     TEAM_LIST_HEADER_TEAMS_ENGLISH, TEAM_LIST_HEADER_TEAMS_IRISH,
@@ -23,89 +16,91 @@ import {
     TEAM_LIST_OFFICIAL_ENGLISH, TEAM_LIST_REFEREE_IRISH,
     TEAM_LIST_REFEREE_ENGLISH, TEAM_LIST_INSTRUCTIONS_IRISH,
     TEAM_LIST_INSTRUCTIONS_ENGLISH, TEAM_LIST_FOOTER,
-
 } from "../globals";
-import PageFooter from "./PageFooter";
 import Header from "./Header";
 
-
 const Report = ( {data} ) => {
+    let num = 0
     const tableRef = useRef(null);
     useEffect(() => {
         const tableElement = tableRef.current;
 
-        const newWindow = window.open('', '_blank');
+        // const newWindow = document.write('', '_blank');
 
     }, [tableRef]);
 
 
-
-
     return (
         <div >
-
             <Header/>
             <p className="TitleStyleUnderline">{TEAM_LIST_TITLE}</p>
 
-    {/* Competition table */}
+        {/* Competition table */}
             <Table className="TableCellStyle Bold">
-                <TableRow className="FirstRowDouble" >
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_COMPETITION_IRISH }</td>
-                    <td className="TableCellStyle">{ data.header.competitionNameIrish   }</td>
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_TEAMS_IRISH       }</td>
-                    <td className="TableCellStyle">{ data.header.homeTeamNameIrish      }</td>
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_TEAMS_SEPARATOR   }</td>
-                    <td className="TableCellStyle">{ data.header.awayTeamNameIrish      }</td>
-                </TableRow>
-
-                <TableRow >
-                    <td className="TitleTableCellStyle">{ TEAM_LIST_HEADER_COMPETITION_ENGLISH }</td>
-                    <td className="TableCellStyle">{ data.header.competitionName }</td>
-                    <td className="TitleTableCellStyle">{ TEAM_LIST_HEADER_TEAMS_ENGLISH }</td>
-                    <td className="TableCellStyle">{ data.header.homeTeamName }</td>
-                    <td  className="TableCellStyle"> </td>
-                    <td> { data.header.awayTeamName }</td>
-                </TableRow>
-            </Table>
-    {/* Home Club and County table */}
-            <br/>
-            <Table className="TableCellStyle Bold">
-                <TableRow >
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_CLUB }</td>
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_CLUB_NAME }</td>
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_COUNTY }</td>
-                    <td className="TableCellStyle">{ TEAM_LIST_HEADER_COUNTY_NAME }</td>
-                </TableRow>
-            </Table>
-            <br/>
-     {/*List of players - 1-15 */}
-            <Table className="my-table">
                 <TableHead>
-                    <TableRow className="TableCellStyle Bold">
-                        <td className="TableCellStyle colNumbers" >{TEAM_LIST_TEAM_NOS}</td>
-                        <td className="TableCellStyle">{TEAM_LIST_TEAM_IRISH}</td>
-                        <td className="TableCellStyle">{TEAM_LIST_TEAM_ENGLISH}</td>
+                    <TableRow key={num+=1} className="FirstRowDouble" >
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_COMPETITION_IRISH }</td>
+                        <td className="TableCellStyle">{ data.header.competitionNameIrish   }</td>
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_TEAMS_IRISH       }</td>
+                        <td className="TableCellStyle">{ data.header.homeTeamNameIrish      }</td>
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_TEAMS_SEPARATOR   }</td>
+                        <td className="TableCellStyle">{ data.header.awayTeamNameIrish      }</td>
+                    </TableRow>
+
+                    <TableRow key={num+=1}>
+                        <td className="TitleTableCellStyle">{ TEAM_LIST_HEADER_COMPETITION_ENGLISH }</td>
+                        <td className="TableCellStyle">{ data.header.competitionName }</td>
+                        <td className="TitleTableCellStyle">{ TEAM_LIST_HEADER_TEAMS_ENGLISH }</td>
+                        <td className="TableCellStyle">{ data.header.homeTeamName }</td>
+                        <td className="TableCellStyle"> </td>
+                        <td > { data.header.awayTeamName }</td>
                     </TableRow>
                 </TableHead>
-                {data.team.map(row => (
-                    <TableRow className="TableRowHeight">
-                        <td className="TableCellStyle" >{row.number}</td>
-                        <td className="TableCellStyle">{row.name}</td>
-                        <td className="TableCellStyle">{row.nameIrish}</td>
+            </Table>
+        {/* Home Club and County table */}
+            <br/>
+            <Table className="TableCellStyle Bold">
+                <TableHead>
+                    <TableRow >
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_CLUB }</td>
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_CLUB_NAME }</td>
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_COUNTY }</td>
+                        <td className="TableCellStyle">{ TEAM_LIST_HEADER_COUNTY_NAME }</td>
                     </TableRow>
-                ))}
+                </TableHead>
+            </Table>
+            <br/>
+        {/*List of players - 1-15 */}
+            <Table className="my-table">
+                <TableHead>
+                    <TableRow key={num+=1} className="TableCellStyle Bold">
+                        <td  className="TableCellStyle colNumbers" >{TEAM_LIST_TEAM_NOS}</td>
+                        <td  className="TableCellStyle">{TEAM_LIST_TEAM_IRISH}</td>
+                        <td  className="TableCellStyle">{TEAM_LIST_TEAM_ENGLISH}</td>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {data.team.map(row => (
+                         <TableRow key={num+=1} className="TableRowHeight">
+                            <td  className="TableCellStyle">{row.number}</td>
+                            <td  className="TableCellStyle">{row.name}</td>
+                            <td  className="TableCellStyle">{row.nameIrish}</td>
+                        </TableRow>
+                    ))}
+                </TableBody>
             </Table>
     {/*List of players - Subs - 16-25 */}
             <p className="TitleStyle">{TEAM_LIST_SUBS_TITLE}</p>
             <Table >
-                {data.subs.map(row => (
-
-                    <TableRow className="TableRowHeight">
-                        <td className="TableCellStyle colNumbers">{row.number}</td>
-                        <td className="TableCellStyle">{row.name}</td>
-                        <td className="TableCellStyle">{row.nameIrish}</td>
-                    </TableRow>
-                ))}
+                <TableBody>
+                    {data.subs.map(row => (
+                        <TableRow key={num+=1} className="TableRowHeight">
+                            <td className="TableCellStyle colNumbers">{row.number}</td>
+                            <td className="TableCellStyle">{row.name}</td>
+                            <td className="TableCellStyle">{row.nameIrish}</td>
+                        </TableRow>
+                    ))}
+                </TableBody>
             </Table>
      {/*Signatures */}
 
